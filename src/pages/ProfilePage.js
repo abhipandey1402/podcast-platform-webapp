@@ -5,15 +5,15 @@ import Button from "../components/Common/Button";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
-// import Loader from "../components/";
+import Loader from "../components/Common/Loader";
 
 function Profile() {
   const user = useSelector((state) => state.user.user);
 
   console.log("My User", user);
-  //   if (!user) {
-  //     return <Loader />;
-  //   }
+  if (!user) {
+    return <Loader />;
+  }
 
   const handleLogout = () => {
     signOut(auth)
@@ -21,7 +21,6 @@ function Profile() {
         toast.success("User Logged Out!");
       })
       .catch((error) => {
-        // An error happened.
         toast.error(error.message);
       });
   };
