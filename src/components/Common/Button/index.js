@@ -1,13 +1,17 @@
-import React from 'react'
-import './style.css'
+import React from "react";
+import "./style.css";
 
-const Button = ({text, onClick, disabled}) => {
-    return (
-        <div onClick={onClick} className='customBtn' disabled={disabled}>
-            {text}
-        </div>
-    )
-}
+const Button = ({ text, onClick, disabled, width }) => {
+  return (
+    <div
+      onClick={onClick}
+      className="customBtn"
+      disabled={disabled}
+      style={{ width: width }}
+    >
+      {text}
+    </div>
+  );
+};
 
-export default Button
-
+export default Button;
